@@ -3973,6 +3973,14 @@ KRL:
   tm_scope: none
   ace_mode: text
   language_id: 186
+Ku:
+  type: programming
+  color: "#cba6f7"
+  extensions:
+  - ".ku"
+  tm_scope: none
+  ace_mode: text
+  language_id: 84088291
 Kaitai Struct:
   type: programming
   aliases:

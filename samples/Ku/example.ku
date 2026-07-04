@@ -1,0 +1,42 @@
+// Ku / Dao sample for GitHub Linguist.
+// Source: https://github.com/zhangshaoling/ku
+// License: MIT, same as the source repository.
+
+引 "std/math" 别 数
+引 "std/string" 别 文
+
+思 记忆化思(名字, 输入, 输出) {
+  {
+    "kind": "thought-memory",
+    "name": 名字,
+    "input": 输入,
+    "output": 输出,
+    "equation": "thought = code = memory"
+  }
+}
+
+思 加一(数值) {
+  数值 + 1
+}
+
+思 斐波那契(n) {
+  若 (<= (n, 1)) {
+    n
+  } {
+    + (斐波那契(- (n, 1)), 斐波那契(- (n, 2)))
+  }
+}
+
+源码 = "思 加一(数值) { 数值 + 1 }"
+抽象树 = parse(源码)
+结果 = 加一(41)
+记忆 = 记忆化思("加一", 41, 结果)
+
+{
+  "thought": 记忆["name"],
+  "code": 抽象树["type"],
+  "memory": 记忆["equation"],
+  "result": 记忆["output"],
+  "fib": 斐波那契(10),
+  "text": 文_连接(["天", "书"], "")
+}
