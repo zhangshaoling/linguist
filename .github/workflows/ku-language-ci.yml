@@ -1,0 +1,30 @@
+name: Validate Ku Language
+
+on:
+  push:
+    branches: [ add-ku-language ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  validate-ku:
+    name: Validate Ku Language Assets
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4'
+          bundler-cache: true
+      - name: Install dependencies
+        run: bundle install
+      - name: Validate Ku language definition
+        run: bundle exec rake test
+      - name: Validate samples
+        run: bundle exec samples
+      - name: Check licenses
+        run: bundle exec licensed status -c vendor/licenses/config.yml
