@@ -1,0 +1,68 @@
+{
+  "name": "Ku",
+  "scopeName": "source.ku",
+  "patterns": [
+    {
+      "match": "#.*$",
+      "name": "comment.line.number-sign.ku"
+    },
+    {
+      "match": "\\b(思|加一|减一|乘|除|若|否则|真|假|空)\\b",
+      "name": "keyword.control.ku"
+    },
+    {
+      "match": "\\b(数|字|串|布尔|记录|列表)\\b",
+      "name": "storage.type.ku"
+    },
+    {
+      "match": "\\b(返回|导入|从)\\b",
+      "name": "keyword.other.ku"
+    },
+    {
+      "begin": "\"",
+      "end": "\"",
+      "name": "string.quoted.double.ku",
+      "patterns": [
+        {
+          "match": "\\\\.",
+          "name": "constant.character.escape.ku"
+        }
+      ]
+    },
+    {
+      "begin": "\\[",
+      "end": "\\]",
+      "name": "meta.structure.record.ku",
+      "patterns": [
+        {
+          "match": "\\w+",
+          "name": "entity.name.field.ku"
+        },
+        {
+          "match": ":",
+          "name": "punctuation.separator.key-value.ku"
+        }
+      ]
+    },
+    {
+      "match": "\\b\\d+\\b",
+      "name": "constant.numeric.integer.ku"
+    },
+    {
+      "match": "\\b(真|假)\\b",
+      "name": "constant.language.boolean.ku"
+    },
+    {
+      "match": "\\b[\\u4e00-\\u9fa5\\w_]+\\b",
+      "name": "variable.other.ku"
+    },
+    {
+      "match": "[+\\-*/=<>！？]+",
+      "name": "keyword.operator.ku"
+    },
+    {
+      "match": "[{}()\\[\\];,]",
+      "name": "punctuation.ku"
+    }
+  ]
+}
